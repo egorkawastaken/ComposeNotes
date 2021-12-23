@@ -4,6 +4,7 @@ import javax.inject.Inject
 
 data class NoteUseCases @Inject constructor(
     val getNotesUseCase: GetNotesUseCase,
-    val deleteNoteUseCase: DeleteNoteUseCase
+    val deleteNoteUseCase: DeleteNoteUseCase,
+    val addNoteUseCase: AddNoteUseCase
 ) {
 }
