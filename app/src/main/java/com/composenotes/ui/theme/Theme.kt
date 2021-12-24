@@ -1,11 +1,10 @@
 package com.composenotes.ui.theme
 
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
-import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 private val DarkColorPalette = darkColors(
     primary = Color.White,
@@ -18,7 +17,7 @@ private val DarkColorPalette = darkColors(
 
 @Composable
 fun ComposeNotesTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
+    darkTheme: Boolean = true,
     content: @Composable() () -> Unit
 ) {
 
@@ -28,4 +27,11 @@ fun ComposeNotesTheme(
         shapes = Shapes,
         content = content
     )
+
+    val systemUiController = rememberSystemUiController()
+
+        systemUiController.setSystemBarsColor(
+            color = Color.DarkGray
+        )
+
 }
